@@ -1,0 +1,55 @@
+**************************************Basic Commands***********************************
+      df -h
+    2  lsblk
+    3  lsblk -fs
+    4  blkid
+       mkfs press tab 2 times
+    5  mkfs.ext4 /dev/xvdb
+    6  blkid
+    7  mkdir /data
+    8  mount /dev/xvdb /data
+    9  df -h
+   10  cd /data
+   11  touch mansi.xt{1..10}
+   12  ll
+   ************************************************
+   replicate of your data one region to another region
+Volumes for different regions
+create a instance - dev-server
+assign tag to the root volume
+create a new volume
+size : 5g
+region : us-east-1a
+tag: data-vol
+attach volume -> device : /dev/sdb
+connect instance
+    #sudo su -
+    lsblk
+    2  mkfs.ext4 /dev/sdb
+    3  mkdir data
+    4  mount /dev/xvdb data
+    5  df -h
+    6  cd data
+    7  touch devops.txt{1..10}
+    8  ll
+    9  history
+create a duplicte session
+select ohio region and create a new instance(test-server)
+create a snapshot for the data-vol in (N.virgina) -> copy the snapshot -> destination = us-east-2
+check in ohio region under snapshot 
+select the snapshot -> create volume from snapshot -> name : new-data-vol -> attach 
+connect ohio 
+ 1  lsblk
+    2  mkdir data1
+    3  mount /dev/xvdb data1
+    4  df -h
+    5  cd /root/data1
+    6  ll
+    7  cd
+    8  umount data1
+    9  ll
+
+    --------------------------------------------------------------------------------------------------------------
+    --------------------------------------------------------------------------------------------------------------
+    
+   
